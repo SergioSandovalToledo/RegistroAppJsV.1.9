@@ -1,0 +1,41 @@
+<!--HEADER-->
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+      <ion-title class="ttl-hddr-js">RegistroJs</ion-title>
+  </ion-toolbar>
+</ion-header><br>
+<!--CONTENT-->
+<ion-content>
+  <ion-card class="crd-js">
+    <!--CARD-HEADER-->
+    <ion-card-header  class="ttl-hdr1-js"> Registrarse </ion-card-header>
+    <!--CARD CONTENT-->
+    <ion-card-content>
+      <!--USUARIO-->
+      <ion-item>
+        <ion-label class="lbl-js" position="floating">Usuario:</ion-label>
+        <ion-input class="npt-js" [(ngModel)]="registrar.username"></ion-input>
+      </ion-item>
+      <!--PASSWORD-->
+      <ion-item>
+        <ion-label class="lbl-js" position="floating">Contraseña:</ion-label>
+        <ion-input class="npt-js" [(ngModel)]="registrar.password"></ion-input>
+      </ion-item>
+      <!--OPCIONES BOTONES-->
+      <ion-item>
+        <ion-select placeholder=" Tipo Usuario: (seleccione)" [(ngModel)]="registrar.Tipo_usuario">
+          <ion-select-option value="true"> Alumno </ion-select-option>
+          <ion-select-option value="false" > Docente </ion-select-option>
+          <ion-input class="npt-js" [(ngModel)]="registrar.Tipo_usuario" type="Boolean"></ion-input>
+        </ion-select>
+    </ion-item>
+    <!--BOTON GUARDAR-->
+    <ion-button class="btn-js" (click)="guardarRegistro(username, password)">Guardar</ion-button>
+  </ion-card-content>
+  </ion-card>
+</ion-content>
+<!--Footer-->
+<app-pie-de-pagina></app-pie-de-pagina>

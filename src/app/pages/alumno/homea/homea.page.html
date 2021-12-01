@@ -1,0 +1,43 @@
+<!--HEADER-->
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <!--RETROCEDER-->
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+      <ion-title class="ttl-hddr-js">RegistroJs</ion-title>
+  </ion-toolbar>
+</ion-header>
+<!--BODY-->
+<ion-content><br><br><br>
+  <ion-card>
+    <ion-card-title class="ttl-hdr1-js">Sección código QR</ion-card-title>
+    <ion-card-content>
+      <!--NI IDEA-->
+  <input #fileinput type="file" accept="image/*;capture=camera" hidden (change)="handleFile($event.target.files)">
+  <!--CAPTURAR IMAGN-->
+  <ion-button class="btn-js" expand="full" (click)="captureImage()"><ion-icon class="icn-js" slot="end" name="camera"></ion-icon>Capturar imagen</ion-button>
+  <!--ESCANEAR IMAGEN-->
+  <ion-button class="btn-js" expand="full" (click)="startScan()"><ion-icon class="icn-js" slot="end" name="qr-code-outline"></ion-icon>Comenzar escaneo</ion-button>
+  <!--RESETEAR LECTOR-->
+  <ion-button class="btn-js" expand="full" (click)="reset()" *ngIf="scanResult"><ion-icon class="icn-js" slot="end" name="refresh"></ion-icon>Reiniciar escaneo</ion-button>
+  <!--VIDEO-->
+  <video #video [hidden]="!scanActive" width="100%"></video>
+ <!--CANVA-->
+  <canvas #canvas hidden></canvas>
+  <!--FINALIZAR LECTURA-->
+  <ion-button class="btn-js" expand="full" (click)="stopScan()" color="danger" *ngIf="scanActive"><ion-icon  slot="end" name="close"></ion-icon>Finalizar escaneo</ion-button>
+  <!--RESULTADO-->
+  <ion-card *ngIf="scanResult">
+    <ion-card-header>
+      <ion-card-title>información del código QR</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          {{ scanResult }}
+        </ion-card-content>
+  </ion-card>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<!--FOOTER-->
+<app-pie-de-pagina></app-pie-de-pagina>

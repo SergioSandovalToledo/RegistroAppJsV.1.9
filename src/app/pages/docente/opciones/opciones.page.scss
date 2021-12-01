@@ -1,0 +1,16 @@
+/*IMAGEN DEL DUOC*/
+ion-card .img-js{
+    display: block;
+    margin: 0 auto 0 auto;
+    max-width: 40%;
+    height: auto;
+}
+/*ICONO*/
+ion-card ion-card-content ion-grid ion-row ion-col ion-card ion-item .icn-js{
+    color:var(--ion-color-primary);
+}
+/*TITULO HEADER*/
+.ttl-hddr-js{
+    color:var(--ion-color-primary);
+    text-align: left;
+}

@@ -1,0 +1,43 @@
+<!--Header-->
+<app-cabecera></app-cabecera>
+<br />
+<ion-content>
+  <!--Card-->
+  <ion-card class="crd-js">
+    <!--Card Header-->
+    <ion-card-header class="ttl-hdr1-js"> Inicio sesión </ion-card-header>
+    <!--Card Content-->
+    <ion-card-content>
+      <br />
+      <ion-buttons>
+        <!--GRID PARA BOTONES-->
+        <ion-grid>
+          <ion-row>
+            <ion-col size="12">
+              <!--USUARIO-->
+              <ion-item>
+                <ion-label class="lbl-js" position="floating">User</ion-label>
+                <ion-input class="npt-js" style="text-transform: none;" #User></ion-input>
+              </ion-item>
+              <!--PASSWORD-->
+              <ion-item>
+                <ion-label class="lbl-js" position="floating">Password</ion-label>
+                <ion-input class="npt-js" style="text-transform: none;" type="password" #Password></ion-input>
+              </ion-item><br>
+              <!--BOTON LOGIN-->
+              <ion-button class="btn-js" expand="full" (click)="validar(User, Password)"> <ion-icon class="icn-js" name="person-outline" slot="end"></ion-icon>Ingresar</ion-button><br/>
+              
+              <!--BOTON REGISTRARSE-->
+              <ion-button class="btn-js" expand="full" [routerLink]=" ['/reg']"> <ion-icon class="icn-js" name="person-add-outline"slot="end"></ion-icon>Registrarse</ion-button><br/>
+              
+              <!--BOTON RECUPERAR-->
+              <ion-button class="btn-js" expand="full" [routerLink]="['/recuperar-clave']" ><ion-icon class="icn-js" name="key-outline" slot="end">Recuperación</ion-icon>Recuperación</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-buttons>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<!--Footer-->
+<app-pie-de-pagina></app-pie-de-pagina>

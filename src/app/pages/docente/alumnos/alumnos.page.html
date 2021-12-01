@@ -1,0 +1,51 @@
+<!--Header-->
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <!--Retroceder-->
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+      <ion-title class="ttl-hddr-js">RegistroJs</ion-title>
+      <ion-buttons slot="end">
+        <!--Agregar-->
+        <ion-button routerLink="/alumnos-add"><ion-icon name="person-add"></ion-icon></ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!--Body-->
+<!--Lista de alumnos-->
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <!--Alumno-->
+      <ion-col size-xs="12" size-sm="12" size-md="12" *ngFor="let aux of alumnos">
+        <ion-card>
+          <!--Card Header-->
+          <ion-card-header>
+            <h4 class="ion-text-center">{{aux.pnombre}}</h4>
+            <img [src]=" aux.imagen ? 'https://registroappjs-app.herokuapp.com/'+aux.imagen.url : 'https://upload.wikimedia.org/wikipedia/commons/d/da/Imagen_no_disponible.svg' "alt="" style="text-align: center; "/>
+          </ion-card-header>
+          <!--Card Content-->
+          <ion-card-content>
+            <h6>Apellido paterno: {{aux.appaterno}}</h6>
+            <h6>Apellido materno: {{aux.apmaterno}}</h6>
+            <h6>Fecha de nacimiento: {{aux.fecha_nac}}</h6>
+            <h6>Trabajo comunitario via dc: {{aux.sub_info}}</h6>
+            <!--Eliminar Alumno-->
+            <ion-buttons>
+              <ion-button (click)="eliminarAlumno(aux.id)">
+                <ion-icon name="trash"></ion-icon>
+              </ion-button>
+              <ion-button [routerLink]="['/','alumnos','edit',aux.id]">
+                <ion-icon name="create"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<!--Footer-->
+<app-pie-de-pagina></app-pie-de-pagina>

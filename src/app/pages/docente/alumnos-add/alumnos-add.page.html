@@ -1,0 +1,70 @@
+<!--Header-->
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+      <ion-title class="ttl-hddr-js">RegistroJs</ion-title>
+  </ion-toolbar>
+</ion-header>
+<!--Body-->
+<ion-content>
+  <!--Card-->
+  <ion-card>
+    <!--Header-->
+      <ion-card-header>
+        <ion-card-title>{{ editar ? 'Actualizar Alumno': 'Guardar Alumno'}}</ion-card-title>
+      </ion-card-header>
+      <!--Content-->
+      <ion-card-content>
+        <!--Primer nombre-->
+        <ion-item>
+          <ion-label position="floating">Primer nombre:</ion-label>
+          <ion-input [(ngModel)]="alumno.pnombre"></ion-input>
+        </ion-item>
+        <!--Segundo nombre-->
+        <ion-item>
+          <ion-label position="floating">Segundo nombre:</ion-label>
+          <ion-input [(ngModel)]="alumno.snombre"></ion-input>
+        </ion-item>
+        <!--Apellido Paterno-->
+        <ion-item>
+          <ion-label position="floating">Apellido Paterno:</ion-label>
+          <ion-input [(ngModel)]="alumno.appaterno"></ion-input>
+        </ion-item>
+        <!--Apellido Materno-->
+        <ion-item>
+          <ion-label position="floating">Apellido Materno:</ion-label>
+          <ion-input [(ngModel)]="alumno.apmaterno"></ion-input>
+        </ion-item>
+        <!--Fecha nacimiento-->
+        <ion-item>
+          <ion-label position="floating">Fecha nacimiento:</ion-label>
+          <ion-input [(ngModel)]="alumno.fecha_nac" type="Date"></ion-input>
+        </ion-item>
+        <!--Numero seguridad-->
+        <ion-item>
+          <ion-label position="floating">Numero de seguridad:</ion-label>
+          <ion-input [(ngModel)]="alumno.numero_seg" type="number"></ion-input>
+        </ion-item>
+        <!--Sub a info-->
+        <ion-item>
+          <ion-select placeholder=" Subscribirse: (seleccione)" [(ngModel)]="alumno.sub_info">
+            <ion-select-option value="true" > Sí </ion-select-option>
+            <ion-select-option value="false"> No </ion-select-option>
+          </ion-select>
+          <ion-input [(ngModel)]="alumno.sub_info" type="Boolean"></ion-input>
+        </ion-item>
+        <!--Boton guardar-->
+          <ion-button (click)="editar ? actualizar() : guardarAlumno(pnombre, snombre, appaterno, apmaterno, fecha_nac)" style="color: black;">
+            {{ editar ? 'Actualizar': 'Guardar'}}
+          </ion-button>
+      </ion-card-content>
+  </ion-card>
+</ion-content>
+<!--Footer-->
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="ion-text-center" style="font-size: 80%; color:#ffb800;">DuocUC &copy; 2021</ion-title>
+  </ion-toolbar>
+</ion-footer>

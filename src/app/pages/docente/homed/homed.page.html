@@ -1,0 +1,63 @@
+<!--Header-->
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+      <ion-title class="ttl-hddr-js">Inicio Docente</ion-title>
+  </ion-toolbar>
+</ion-header>
+<!--Body-->
+<ion-grid>
+  <ion-row>
+    <!--Bienvenida-->
+    <!--Secciones-->
+    <ion-col size-xs="12"size-sm="12"size-md="12"[routerLink]="['/secciones']">
+      <ion-card>
+        <ion-item>
+          <ion-icon name="book-outline" slot="start"></ion-icon>
+          <h6>Listado de secciones a que se le imparten clases</h6>
+        </ion-item>
+      </ion-card>
+    </ion-col>
+    <!--Alumnos-->
+    <ion-col size-xs="12"size-sm="12"size-md="12"[routerLink]="['/alumnos']">
+      <ion-card>
+        <ion-item>
+          <ion-icon name="people-outline" slot="start"></ion-icon>
+          <h6>Alumnos</h6>
+        </ion-item>
+      </ion-card>
+    </ion-col>
+    <!--Proximamente-->
+    <ion-col size-xs="12"size-sm="12"size-md="12"[routerLink]="['/homed']">
+        <ion-card>
+          <ion-item>
+            <ion-icon name="ban-outline" slot="start"></ion-icon>
+            <h6>Próximamente</h6>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+      <!--Proximamente-->
+    <ion-col size-xs="12"size-sm="12"size-md="12"[routerLink]="['/homed']">
+        <ion-card>
+          <ion-item>
+            <ion-icon name="ban-outline" slot="start"></ion-icon>
+            <h6>Próximamente</h6>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+      <!--Proximamente-->
+    <ion-col size-xs="12"size-sm="12"size-md="12"[routerLink]="['/homed']">
+        <ion-card>
+          <ion-item>
+            <ion-icon name="ban-outline" slot="start"></ion-icon>
+            <h6>Próximamente</h6>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+      <!--Fin-->
+  </ion-row>
+</ion-grid>
+<!--Footer-->
+<app-pie-de-pagina></app-pie-de-pagina>
